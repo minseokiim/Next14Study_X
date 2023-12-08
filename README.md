@@ -1,20 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Introduce
+
+리액트18 & 넥스트14 & 리액트쿼리5 & Next Auth5 & MSW2 & socket.io4 & zustand로 x.com 클론코딩 하기
 
 ## Getting Started
 
-First, run the development server:
-
-```bash
+npx create-next-app@latest
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
@@ -34,3 +27,8 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## App Router
+
+pages router의 부족한 점을 개선, 리액트 18버전(서버컴포넌트) 사용이 가장 큰 차이
+html 로딩 시간이 줄어들었고, js용량도 줄어드는등 여러 이점 but, 서버에 부담
