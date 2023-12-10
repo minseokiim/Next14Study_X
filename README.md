@@ -1,13 +1,15 @@
 ## Introduce
 
-리액트18 & 넥스트14 & 리액트쿼리5 & Next Auth5 & MSW2 & socket.io4 & zustand로 x.com 클론코딩 하기
+x.com 클론코딩
+
+## Stack
+
+리액트18 & 넥스트14 & 리액트쿼리5 & Next Auth5 & MSW2 & socket.io4 & zustand
 
 ## Getting Started
 
 npx create-next-app@latest <br/>
 npm run dev
-
-Open [http://localhost:3000](http://localhost:3000)
 
 ## Learn More
 
