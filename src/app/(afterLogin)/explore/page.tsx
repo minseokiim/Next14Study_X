@@ -1,7 +1,6 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Image from 'next/image'
+import styles from './page.module.css'
 
-// 서버 실행하면 뜨는 페이지
 export default function Home() {
   return (
     <main className={styles.main}>
@@ -16,7 +15,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{" "}
+            By{' '}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
@@ -92,5 +91,5 @@ export default function Home() {
         </a>
       </div>
     </main>
-  );
+  )
 }
