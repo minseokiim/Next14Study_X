@@ -1,4 +1,5 @@
 .modalBackground {
+  /* 뒤의 로그인 배경을 반투명하게 어둡게 깔아줌 */
   width: 100vw;
   height: 100%;
   display: flex;
