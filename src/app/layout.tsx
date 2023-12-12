@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import styles from "./page.module.css";
 
 // 모든 페이지의 공통 레이아웃, 만약 Home만의 레이아웃을 만들고 싶다면 그 디엑토리에 만들어주기
 
@@ -19,20 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <div className={styles.container}>루트 레이아웃{children}</div>;
+      <body className={inter.className}>{children}</body>;
     </html>
   );
 }
-
-// import { ReactNode } from "react";
-// // import styles from "@/app/(beforeLogin)/_component/main.module.css";
-
-// type Props = { children: ReactNode; modal: ReactNode };
-// export default function Layout({ children, modal }: Props) {
-//   return (
-//     <div className={styles.container}>
-//       {children}
-//       {modal}
-//     </div>
-//   );
-// }
