@@ -24,11 +24,14 @@
   height: 100dvh;
   display: flex;
   flex-direction: column;
+  /* 로그아웃 버튼은 제일 밑에 위치 -> 1. flex를 column으로 만들어주기 */
 }
 
 .leftSectionFixed nav {
   flex: 1;
+  /* 로그아웃 버튼은 제일 밑에 위치 -> 2. 위에를 다 1로 두면 밀려남 */
 }
+
 .leftSectionFixed nav li {
   list-style-type: none;
 }
