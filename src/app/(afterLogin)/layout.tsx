@@ -1,14 +1,17 @@
+import { ReactNode } from "react";
 import style from "@/app/(afterLogin)/layout.module.css";
 import Link from "next/link";
-import zLogo from "/public/zlogo.png";
 import Image from "next/image";
-import NavMenu from "./_component/NavMenu";
-import LogoutButton from "./_component/LogoutButton";
+import ZLogo from "../../../public/zlogo.png";
+import NavMenu from "@/app/(afterLogin)/_component/NavMenu";
+import LogoutButton from "@/app/(afterLogin)/_component/LogoutButton";
+import TrendSection from "@/app/(afterLogin)/_component/TrendSection";
+import FollowRecommend from "@/app/(afterLogin)/_component/FollowRecommend";
 
 export default function AfterLoginLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <div className={style.container}>
@@ -17,7 +20,7 @@ export default function AfterLoginLayout({
           <div className={style.leftSectionFixed}>
             <Link className={style.logo} href="/home">
               <div className={style.logoPill}>
-                <Image src={zLogo} alt="로고" width={40} height={40}></Image>
+                <Image src={ZLogo} alt="z.com로고" width={40} height={40} />
               </div>
             </Link>
             <nav>
@@ -35,7 +38,7 @@ export default function AfterLoginLayout({
       </header>
       <div className={style.rightSectionWrapper}>
         <div className={style.rightSectionInner}>
-          <main className={style.main}></main>
+          <main className={style.main}>{children}</main>
           <section className={style.rightSection}>
             <div style={{ marginBottom: 60, width: "inherit" }}>
               <form className={style.search}>
@@ -47,8 +50,12 @@ export default function AfterLoginLayout({
                 <input type="search" />
               </form>
             </div>
+            <TrendSection />
             <div className={style.followRecommend}>
               <h3>팔로우 추천</h3>
+              <FollowRecommend />
+              <FollowRecommend />
+              <FollowRecommend />
             </div>
           </section>
         </div>
