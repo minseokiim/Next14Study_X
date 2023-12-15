@@ -1,6 +1,6 @@
 "use client";
 import style from "./post.module.css";
-// import cx from "classnames";
+import cx from "classnames";
 
 export default function ActionButtons() {
   const commented = true;
@@ -13,7 +13,7 @@ export default function ActionButtons() {
 
   return (
     <div className={style.actionButtons}>
-      {/* <div
+      <div
         className={cx(style.commentButton, { [style.commented]: commented })}
       >
         <button onClick={onClickComment}>
@@ -44,7 +44,7 @@ export default function ActionButtons() {
           </svg>
         </button>
         <div className={style.count}>{0 || ""}</div>
-      </div> */}
+      </div>
     </div>
   );
 }

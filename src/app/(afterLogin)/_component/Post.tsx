@@ -1,12 +1,13 @@
 import style from "./post.module.css";
 import Link from "next/link";
-// import dayjs from "dayjs";
-// import relativeTime from "dayjs/plugin/relativeTime";
-// import "dayjs/locale/ko";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import "dayjs/locale/ko";
 import ActionButtons from "@/app/(afterLogin)/_component/ActionButtons";
+import Image from "next/image";
 
-// dayjs.locale("ko");
-// dayjs.extend(relativeTime);
+dayjs.locale("ko");
+dayjs.extend(relativeTime);
 
 export default function Post() {
   const target = {
@@ -15,7 +16,7 @@ export default function Post() {
       nickname: "Elon Musk",
       image: "/yRsRRjGO.jpg",
     },
-    content: "클론코딩 라이브로 하니 너무 힘들어요 ㅠㅠ",
+    content: "넥스트 공부",
     createdAt: new Date(),
     Images: [],
   };
@@ -37,7 +38,7 @@ export default function Post() {
               &nbsp; · &nbsp;
             </Link>
             <span className={style.postDate}>
-              {/* {dayjs(target.createdAt).fromNow(true)} */}
+              {dayjs(target.createdAt).fromNow(true)}
             </span>
           </div>
           <div>{target.content}</div>
