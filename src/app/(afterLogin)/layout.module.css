@@ -13,7 +13,7 @@
 }
 
 .leftSection {
-  width: 275px;
+  width: 72px;
   height: 100dvh;
 }
 
@@ -21,10 +21,21 @@
   position: fixed;
   width: inherit;
   /*  width: 275px, 부모랑 자식이라 같다고 100%적용해도 fixed라서 그대로 못가져옴, 이럴때는 inherit으로 그대로 가져오기 */
+  padding: 0 8px;
   height: 100dvh;
   display: flex;
   flex-direction: column;
   /* 로그아웃 버튼은 제일 밑에 위치 -> 1. flex를 column으로 만들어주기 */
+  align-items: center;
+}
+
+@media all and (min-width: 1300px) {
+  .leftSection {
+    width: 275px;
+  }
+  .leftSectionFixed {
+    align-items: flex-start;
+  }
 }
 
 .leftSectionFixed nav {
@@ -59,19 +70,42 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 52px;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 28px;
   background-color: rgb(29, 155, 240);
-  width: 234px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   border: none;
   color: rgb(255, 255, 255);
   font-weight: 700;
   font-size: 17px;
-  border-radius: 26px;
 }
 
 .postButton:hover {
   background-color: rgb(26, 140, 216);
+}
+
+.postButton span {
+  display: none;
+}
+.postButton svg {
+  display: inline-block;
+  fill: white;
+  width: 24px;
+}
+
+@media all and (min-width: 1300px) {
+  .postButton {
+    height: 52px;
+    width: 234px;
+    border-radius: 26px;
+  }
+  .postButton span {
+    display: inline-block;
+  }
+  .postButton svg {
+    display: none;
+  }
 }
 
 .rightSectionWrapper {
@@ -83,22 +117,32 @@
   /* 왼쪽, 오른쪽 사이즈 달라도 가운데 정렬 가능하고, 같은 크기의 여백 */
 }
 
+.rightSection {
+  display: none;
+}
+
 .rightSectionInner {
   height: 100%;
-  width: 990px;
+  width: 600px;
   display: flex;
   justify-content: space-between;
   /*rightSectionInner의 자식인 main과 rightSection이 최대한 떨어지게 하는 옵션  */
 }
 
+@media all and (min-width: 1024px) {
+  .rightSection {
+    display: inline-block;
+    width: 350px;
+    height: 100%;
+  }
+  .rightSectionInner {
+    width: 990px;
+  }
+}
+
 .main {
   width: 600px;
   height: 200dvh;
-}
-
-.rightSection {
-  width: 350px;
-  height: 100%;
 }
 
 .search {
