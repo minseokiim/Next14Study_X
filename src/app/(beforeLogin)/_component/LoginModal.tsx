@@ -1,18 +1,45 @@
 "use client";
 
 import style from "@/app/(beforeLogin)/_component/login.module.css";
-import { useState } from "react";
+import { signIn } from "next-auth/react"; //클라이언트일때
+import { useRouter } from "next/navigation";
+import { ChangeEventHandler, FormEventHandler, useState } from "react";
 
 export default function LoginModal() {
-  const [id, setId] = useState();
-  const [password, setPassword] = useState();
-  const [message, setMessage] = useState();
-  const onSubmit = () => {};
-  const onClickClose = () => {};
+  const [id, setId] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const router = useRouter();
 
-  const onChangeId = () => {};
+  const onSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
+    e.preventDefault();
+    setMessage("");
+    try {
+      // signIn("kakao") 카카오 로그인 호출
+      await signIn("credentials", {
+        // username과 password는 next auth에서 고정
+        username: id,
+        password,
+        redirect: false, //이게 true이면 서버에서 리다이렉트 함
+      });
+      router.replace("/home"); //클라이언트 리다이렉트
+    } catch (err) {
+      console.error(err);
+      setMessage("아이디와 비밀번호가 일치하지 않습니다.");
+    }
+  };
 
-  const onChangePassword = () => {};
+  const onClickClose = () => {
+    router.back();
+  };
+
+  const onChangeId: ChangeEventHandler<HTMLInputElement> = (e) => {
+    setId(e.target.value);
+  };
+
+  const onChangePassword: ChangeEventHandler<HTMLInputElement> = (e) => {
+    setPassword(e.target.value);
+  };
 
   return (
     <div className={style.modalBackground}>
