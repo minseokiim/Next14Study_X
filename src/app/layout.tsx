@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { MSWComponent } from "./_component/MSWComponent";
 
 // 모든 페이지의 공통 레이아웃, 만약 Home만의 레이아웃을 만들고 싶다면 그 디엑토리에 만들어주기
 
@@ -18,7 +19,11 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body className={inter.className}>{children}</body>;
+      <body className={inter.className}>
+        <MSWComponent />
+        {children}
+      </body>
+      ;
     </html>
   );
 }
