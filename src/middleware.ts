@@ -1,6 +1,7 @@
 import { auth } from "./auth";
 import { NextResponse } from "next/server";
 
+//로그인 안했을때 홈 못들어가게 하는 방법 2.
 export async function middleware() {
   const session = await auth();
   if (!session) {

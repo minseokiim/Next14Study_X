@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { MSWComponent } from "./_component/MSWComponent";
+import AuthSession from "./_component/AuthSession";
 
 // 모든 페이지의 공통 레이아웃, 만약 Home만의 레이아웃을 만들고 싶다면 그 디엑토리에 만들어주기
 
@@ -21,7 +22,8 @@ export default function RootLayout({
     <html>
       <body className={inter.className}>
         <MSWComponent />
-        {children}
+        {/* useSession으로 계속 로그인 여부 확인해줄거라서 감싸줘야함 */}
+        <AuthSession>{children}</AuthSession>
       </body>
       ;
     </html>

@@ -1,6 +1,7 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 //import KaKaoProvider from "next-auth/providers/kakao";
+import { NextResponse } from "next/server";
 
 export const {
   handlers: { GET, POST }, //api 라우트
@@ -12,7 +13,22 @@ export const {
     signIn: "/i/flow/login",
     newUser: "/i/flow/signup",
   },
+
+  //로그인 안했을때 홈 못들어가게 하는 방법 1.
+
+  //   callbacks: {
+  //     //세션검사했을때 세션이 없는 경우
+  //     async authorized({ request, auth }) {
+  //       const url = request.nextUrl;
+  //       if (!auth) {
+  //         return NextResponse.redirect(`http://localhost:3000/i/flow/login`);
+  //       }
+  //       return true;
+  //     },
+  //   },
+
   providers: [
+    //CredentialsProvider : 기본적인 로그인 지원
     CredentialsProvider({
       async authorize(credentials) {
         const authResponse = await fetch(`${process.env.AUTH_URL}/api/login`, {
